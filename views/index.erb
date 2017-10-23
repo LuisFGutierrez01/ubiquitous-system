@@ -1,14 +1,31 @@
 <html>
 	<head>
-		<title><%= @title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title><%= @title %></title>
 	</head>
 	<body>
-		<h1><%= @headline %></h1>
-		<p><%= @paragraph %></p>
+		<center><h1><%= @headline %></h1>
+		<p><%= @paragraph %></p> </center>
 
-		<% @posts.each do |post| %>
-		    <h2><%= post.title %></h2>
-		    <p><%= post.body %></p>
-		<% end %>
+
+<% @posts.each do |post| %>
+	<div class="container">
+		<div class="row">
+		<link rel="stylesheet" type="text/css" href="/style.css" />
+			 <div class="comment-box">
+       	      <h4 class="title"> <%= post.title %> </h4>
+       	      <%= post.body %>
+     	   </div>
+		</div>
+	</div>
+<% end %>
+
+
+
+
 	</body>
 </html>
